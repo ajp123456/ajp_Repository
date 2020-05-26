@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ajp2</title>
+<script language="javascript" type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<!-- <script language="javascript" type="text/javascript" src="js/handler-chinese.js"></script> -->
+<script language="javascript" type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+<script>
+	function create(){
+		//var str = utf16to8($('#input').val());
+        var str = $("#input").val();
+        
+        $("#out").empty();
+		$("#out").qrcode({width:500,height:500,text:str});
+	}
+</script>
+</head>
+
+<body>
+   <center>
+    	<h1>二维码生成器</h1>
+        <hr width="70%" />
+
+    	<input type="text" id="input" />
+        <input type="button" value="生成" onclick="create()" />
+        
+        <div id="out" style="width:500px; height:500px; border:1px solid #0F0"></div>
+    </center>
+</body>
+</html>
